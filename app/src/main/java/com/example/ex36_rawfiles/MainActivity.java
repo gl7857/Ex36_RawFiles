@@ -1,11 +1,14 @@
 package com.example.ex36_rawfiles;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import java.io.BufferedReader;
@@ -101,13 +104,6 @@ public class MainActivity extends AppCompatActivity {
         textView.setText(editText.getText().toString());
     }
 
-    /**
-     * Creates the options menu for this activity.
-     * Inflates the menu resource to display the menu items.
-     *
-     * @param menu The menu in which items should be added.
-     * @return true if the menu was successfully created, false otherwise.
-     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.creditsmenu, menu);
@@ -115,16 +111,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Handles item selection from the options menu.
-     * If the "menuMain" item is selected, the activity finishes and returns to the main activity.
+     * Handles menu item selections, navigating to the credits screen if selected.
      *
-     * @param item The menu item that was selected.
-     * @return true if the item selection was handled, false otherwise.
+     * @param item The selected menu item.
+     * @return True if the selection was handled.
      */
     @Override
-    public boolean onOptionsItemSelected(@Nullable MenuItem item) {
-        if (item != null && item.getItemId() == R.id.menuMain) {
-            finish();
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.menuCredits) {
+            Intent intent = new Intent(this, Credits.class);
+            startActivity(intent);
             return true;
         }
         return super.onOptionsItemSelected(item);
