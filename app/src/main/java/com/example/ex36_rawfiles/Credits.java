@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
  *
  * @author      Gali Lavi <gl7857@bs.amalnet.k12.il>
  * @version     1.0
- * @since       02/03/2025
+ * @since       07/03/2025
  *
  * short description:
  *        This activity enables edge-to-edge display and shows a credits screen.
