@@ -38,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         resourceId = getResources().getIdentifier(fileName, "raw", getPackageName());
     }
 
-
     public void onRawClick(View view) {
         try {
             InputStream iS = this.getResources().openRawResource(resourceId);
